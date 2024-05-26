@@ -4,7 +4,7 @@ import Video from './assets/car.mp4';
 
 function Weather() {
     const api = {
-        key: "3252fed708c47312fd9cac9c3dc35a38",
+        key: "your_secret_api_key",
         base: "https://api.openweathermap.org/data/2.5/",
     };
 
