@@ -40,7 +40,7 @@ function Weather() {
                 <input onChange={(e) => setWeather(e.target.value)} placeholder="Enter city name"></input><br />
                 <button onClick={Search}>Search</button>
                 {error && <p className="error">Error: {error}</p>}
-                {typeof data.main !== "undefined" ? (
+                {!error && typeof data.main !== "undefined" ? (
                     <div>
                         <p>Location: {data.name}</p>
                         <p>Celsius: {data.main.temp}°C</p>
@@ -48,12 +48,14 @@ function Weather() {
                         <p>Atmospheric conditions: {data.weather?.[0]?.description}</p>
                     </div>
                 ) : (
+                    !error && (
                     <div>
                         <p>Location:</p>
                         <p>Celsius:</p>
                         <p>Status:</p>
                         <p>Atmospheric conditions:</p>
                     </div>
+                    )
                 )}
             </div>
         </div>
